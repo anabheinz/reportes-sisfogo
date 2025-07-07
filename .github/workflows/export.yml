@@ -2,7 +2,7 @@ name: Exportar CSV automaticamente
 
 on:
   schedule:
-    - cron: '0 * * * *'  # A cada hora (UTC)
+    - cron: '*/3 * * * *'  # A cada hora (UTC)
   workflow_dispatch:      # Permite rodar manualmente
 
 jobs:
