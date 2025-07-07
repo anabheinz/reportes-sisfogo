@@ -5,7 +5,10 @@ from fpdf import FPDF
 from datetime import date
 import tempfile
 
-engine = create_engine('postgresql+psycopg2://editor02:20%40rotide@p-srv0089:5432/sisfogo_db')
+secrets = st.secrets["postgres"]
+engine = create_engine(
+    f"postgresql://{secrets.user}:{secrets.password}@{secrets.host}:{secrets.port}/{secrets.database}"
+)
 
 df = pd.read_sql("SELECT * FROM editor02.combates_2024", engine)
 # print(df) 
