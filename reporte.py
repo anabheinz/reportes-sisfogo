@@ -11,7 +11,8 @@ engine = create_engine(
 )
 
 df = pd.read_sql("SELECT * FROM editor02.combates_2024", engine)
-# print(df) 
+df.to_csv("dados/combates_2024.csv", index=False)
+
 
 st.title("Reporte de Incêndios Florestais")
 
